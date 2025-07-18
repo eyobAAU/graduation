@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Graduation Celebration</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <audio id="celebrationSound" loop>
+        <source src="assets/celebration.mp3" type="audio/mpeg">
+    </audio>
+    
+    <video autoplay muted loop id="spaceVideo">
+        <source src="assets/stars.mp4" type="video/mp4">
+    </video>
+    
+    <div class="sound-control" onclick="toggleSound()">
+        <i class="fas fa-volume-up"></i>
+    </div>
+    
+    <div class="cosmic-container">
+        <div class="meteor-shower"></div>
+        
+        <div class="message-orbit">
+            <div class="planet-center"></div>
+            <div class="message-planet" id="message1">
+                <div class="planet-content">
+                    <h2>2019</h2>
+                    <p>Your journey began</p>
+                </div>
+            </div>
+            <div class="message-planet" id="message2">
+                <div class="planet-content">
+                    <h2>2020</h2>
+                    <p>Challenges overcome</p>
+                </div>
+            </div>
+            <div class="message-planet" id="message3">
+                <div class="planet-content">
+                    <h2>2021</h2>
+                    <p>Growth accelerated</p>
+                </div>
+            </div>
+            <div class="message-planet" id="message4">
+                <div class="planet-content">
+                    <h2>2022</h2>
+                    <p>Skills mastered</p>
+                </div>
+            </div>
+            <div class="message-planet" id="message5">
+                <div class="planet-content">
+                    <h2>2023</h2>
+                    <p>Goals achieved</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-message">
+            <h1 class="cosmic-title">YOU DID IT!</h1>
+            <div class="grad-name-container">
+                <span class="grad-name-letter">D</span>
+                <span class="grad-name-letter">A</span>
+                <span class="grad-name-letter">G</span>
+                <span class="grad-name-letter">O</span>
+            </div>
+            <p class="cosmic-subtitle">እመቤቴ ካንተ ጋራ ትሁን</p>
+            <button class="explode-btn" onclick="celebrate()">PHARMACY</button>
+        </div>
+        
+        <div class="constellation">
+            <div class="star" style="top:15%; left:20%"></div>
+            <div class="star" style="top:25%; left:70%"></div>
+            <div class="star" style="top:60%; left:10%"></div>
+            <div class="star" style="top:80%; left:80%"></div>
+            <div class="star" style="top:40%; left:50%"></div>
+            <div class="star" style="top:70%; left:30%"></div>
+            <div class="star" style="top:30%; left:40%"></div>
+            <div class="star" style="top:50%; left:90%"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

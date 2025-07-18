@@ -1,0 +1,352 @@
+:root {
+    --cosmic-purple: #6a00f4;
+    --nebula-pink: #ff00c1;
+    --star-yellow: #ffe700;
+    --space-blue: #001a4b;
+    --galaxy-teal: #00f5d4;
+    --dark-matter: #0b0b20;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#spaceVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+.cosmic-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.meteor-shower {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.meteor {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px var(--star-yellow);
+    animation: meteor-fall linear infinite;
+}
+
+@keyframes meteor-fall {
+    0% {
+        transform: translateY(-100px) translateX(0) rotate(45deg);
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(100px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.message-orbit {
+    position: absolute;
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 50%;
+    animation: rotate-orbit 60s linear infinite;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.planet-center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--star-yellow);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px 5px var(--star-yellow);
+}
+
+.message-planet {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transform-origin: center;
+}
+
+.message-planet:hover {
+    transform: scale(1.2);
+    z-index: 10;
+}
+
+#message1 {
+    top: 0;
+    left: calc(50% - 60px);
+    background: radial-gradient(circle, var(--cosmic-purple), var(--dark-matter));
+    box-shadow: 0 0 30px var(--cosmic-purple);
+}
+
+#message2 {
+    top: calc(20% - 60px);
+    left: calc(90% - 60px);
+    background: radial-gradient(circle, var(--nebula-pink), var(--dark-matter));
+    box-shadow: 0 0 30px var(--nebula-pink);
+}
+
+#message3 {
+    top: calc(70% - 60px);
+    left: calc(80% - 60px);
+    background: radial-gradient(circle, var(--galaxy-teal), var(--dark-matter));
+    box-shadow: 0 0 30px var(--galaxy-teal);
+}
+
+#message4 {
+    top: calc(100% - 120px);
+    left: calc(50% - 60px);
+    background: radial-gradient(circle, var(--star-yellow), var(--dark-matter));
+    box-shadow: 0 0 30px var(--star-yellow);
+}
+
+#message5 {
+    top: calc(70% - 60px);
+    left: calc(10% - 60px);
+    background: radial-gradient(circle, #ff6b00, var(--dark-matter));
+    box-shadow: 0 0 30px #ff6b00;
+}
+
+.planet-content {
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.message-planet:hover .planet-content {
+    opacity: 1;
+}
+
+.main-message {
+    text-align: center;
+    z-index: 5;
+    background: rgba(11, 11, 32, 0.7);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 50px rgba(106, 0, 244, 0.3);
+    transform: scale(0.9);
+    transition: all 0.5s ease;
+}
+
+.main-message:hover {
+    transform: scale(1);
+    box-shadow: 0 0 80px rgba(106, 0, 244, 0.6);
+}
+
+.cosmic-title {
+    font-family: 'Staatliches', cursive;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--nebula-pink), var(--galaxy-teal));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+}
+
+.grad-name-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.grad-name-letter {
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.grad-name-letter:hover {
+    transform: translateY(-10px);
+    background: var(--cosmic-purple);
+    box-shadow: 0 0 20px var(--cosmic-purple);
+}
+
+.cosmic-subtitle {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.explode-btn {
+    background: linear-gradient(45deg, var(--cosmic-purple), var(--nebula-pink));
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.explode-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--nebula-pink), var(--galaxy-teal));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.explode-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.explode-btn:hover::before {
+    opacity: 1;
+}
+
+.explode-btn:active {
+    transform: translateY(1px);
+}
+
+.constellation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        box-shadow: 0 0 5px white;
+    }
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 20px white;
+    }
+}
+
+@keyframes rotate-orbit {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.sound-control {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--cosmic-purple);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--cosmic-purple);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.sound-control:hover {
+    background: var(--nebula-pink);
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cosmic-title {
+        font-size: 3rem;
+    }
+    
+    .grad-name-letter {
+        font-size: 2rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .cosmic-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .message-planet {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .planet-content {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+}
